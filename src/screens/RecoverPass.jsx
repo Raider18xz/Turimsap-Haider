@@ -5,12 +5,12 @@ const RecoverPass = ({ navigation }) => {
   const [email, setEmail] = useState('');
 
   const handleRecoverPassword = () => {
-    console.log('Recuperar contraseña para:', email);
+    console.log('Recovering password for:', email);
     navigation.navigate('NewPasswordScreen');
   };
 
   const handleCancel = () => {
-    navigation.navigate('Login'); // Asegúrate de que 'Login' coincida con el nombre en App.js
+    navigation.navigate('Login');
   };
 
   return (
@@ -18,18 +18,17 @@ const RecoverPass = ({ navigation }) => {
       <View style={styles.inputField}>
         <TextInput
           style={styles.input}
-          placeholder="Correo electrónico"
+          placeholder="Email Address"
           keyboardType="email-address"
           value={email}
           onChangeText={setEmail}
+          placeholderTextColor="#ccc"
         />
       </View>
-      <Button title="Siguiente" onPress={handleRecoverPassword} />
+      <Button title="Next" onPress={handleRecoverPassword} />
       <Pressable onPress={handleCancel}>
-        <Text style={styles.link}>Cancelar</Text>
+        <Text style={styles.link}>Cancel</Text>
       </Pressable>
-      
- 
     </View>
   );
 };
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#000', // Fondo negro
     padding: 20,
   },
   inputField: {
@@ -53,9 +52,10 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 16,
     width: '100%',
+    color: '#fff', // Texto blanco
   },
   link: {
-    color: 'blue',
+    color: '#fff', // Texto blanco para los enlaces
     marginTop: 20,
     textDecorationLine: 'underline',
   },

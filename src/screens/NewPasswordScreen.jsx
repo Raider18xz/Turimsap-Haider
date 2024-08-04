@@ -5,8 +5,8 @@ const NewPasswordScreen = ({ navigation }) => {
   const [newPassword, setNewPassword] = useState('');
 
   const handleConfirm = () => {
-    console.log('Nueva contraseña:', newPassword);
-    navigation.navigate('Login'); // Asegúrate de que 'Login' coincida con el nombre de la ruta en App.js
+    console.log('New password:', newPassword);
+    navigation.navigate('Login');
   };
 
   return (
@@ -14,13 +14,14 @@ const NewPasswordScreen = ({ navigation }) => {
       <View style={styles.inputField}>
         <TextInput
           style={styles.input}
-          placeholder="Nueva contraseña"
+          placeholder="New Password"
           secureTextEntry
           value={newPassword}
           onChangeText={setNewPassword}
+          placeholderTextColor="#ccc"
         />
       </View>
-      <Button title="Confirmar" onPress={handleConfirm} />
+      <Button title="Confirm" onPress={handleConfirm} color="#007bff" />
     </View>
   );
 };
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#000', // Fondo negro
     padding: 20,
   },
   inputField: {
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 16,
     width: '100%',
+    color: '#fff', // Texto blanco
   },
 });
 
